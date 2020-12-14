@@ -9,9 +9,26 @@ Remember to export the component at the end
 */
 
 import React from 'react'
+import Home from './components/Home'
+import About from './components/About'
+import Car from './components/Car'
 import { Switch, Route } from 'react-router'
 // Write component imports here //
-
-
+export default function Router(){
+    return(
+        <Switch>
+            <Route path= "/about">
+                <About />
+            </Route>
+            <Route path= "/car/:id" component={Car}>{/**when using props.match */}
+                {/* <Car /> */}
+            </Route>
+            <Route path= "/">
+                <Home />
+            </Route>
+        </Switch>
+    )
+    
+}
 
 // Start Router function here //
